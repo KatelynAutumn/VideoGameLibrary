@@ -47,11 +47,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.DueDateLabel.text = ""
         let currentGame = allGames[indexPath.row]
         
+        //If the current game is checked in, the background color of the status view will be green
         if currentGame.Availability {
             cell.AvailabilityColor.backgroundColor = UIColor.green
         } else {
             cell.AvailabilityColor.backgroundColor = UIColor.red
         }
+        
+        //If the game has  a due date, we want to format it into a String and display it on the DueDateLabel
+        if let dueDate = currentGame.DueDate {
+            cell.DueDateLabel.text = formatDate(dueDate)
+        } else {
+            cell.DueDateLabel.text = ""
+        }
+        
         
         return cell
     }

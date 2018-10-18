@@ -16,6 +16,8 @@
 		AF1B14E3217570E000736A5E /* VideoGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1B14E2217570E000736A5E /* VideoGameTableViewCell.swift */; };
 		AFB767E4217659AF000598AA /* GameDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB767E3217659AF000598AA /* GameDetails.storyboard */; };
 		AFB767EC217671CD000598AA /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB767EB217671CD000598AA /* DescriptionViewController.swift */; };
+		AFB7680E2178BFFC000598AA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7680D2178BFFC000598AA /* Utilities.swift */; };
+		AFB768152178C592000598AA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB768142178C592000598AA /* GameManager.swift */; };
 		AFF7C66121762034003EE64F /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF7C66021762034003EE64F /* AddGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		AF1B14E2217570E000736A5E /* VideoGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGameTableViewCell.swift; sourceTree = "<group>"; };
 		AFB767E3217659AF000598AA /* GameDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameDetails.storyboard; sourceTree = "<group>"; };
 		AFB767EB217671CD000598AA /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
+		AFB7680D2178BFFC000598AA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		AFB768142178C592000598AA /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		AFF7C66021762034003EE64F /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,19 +68,45 @@
 		AF1B14BB21750C6000736A5E /* Video-Game-Library */ = {
 			isa = PBXGroup;
 			children = (
-				AF1B14BC21750C6000736A5E /* AppDelegate.swift */,
+				AFB768132178C545000598AA /* Utiities */,
+				AFB768122178C523000598AA /* GameTableViewCell */,
+				AFB768112178C4F7000598AA /* DataModels */,
 				AF1B14C521750C6100736A5E /* LaunchScreen.storyboard */,
 				AF1B14C021750C6000736A5E /* Main.storyboard */,
 				AF1B14BE21750C6000736A5E /* ViewController.swift */,
 				AFB767E3217659AF000598AA /* GameDetails.storyboard */,
 				AFB767EB217671CD000598AA /* DescriptionViewController.swift */,
-				AF1B14C321750C6100736A5E /* Assets.xcassets */,
 				AF1B14C821750C6100736A5E /* Info.plist */,
-				AF1B14DE21751C0900736A5E /* VideoGame.swift */,
-				AF1B14E2217570E000736A5E /* VideoGameTableViewCell.swift */,
 				AFF7C66021762034003EE64F /* AddGameViewController.swift */,
+				AFB7680D2178BFFC000598AA /* Utilities.swift */,
 			);
 			path = "Video-Game-Library";
+			sourceTree = "<group>";
+		};
+		AFB768112178C4F7000598AA /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				AF1B14DE21751C0900736A5E /* VideoGame.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		AFB768122178C523000598AA /* GameTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AF1B14E2217570E000736A5E /* VideoGameTableViewCell.swift */,
+			);
+			path = GameTableViewCell;
+			sourceTree = "<group>";
+		};
+		AFB768132178C545000598AA /* Utiities */ = {
+			isa = PBXGroup;
+			children = (
+				AF1B14C321750C6100736A5E /* Assets.xcassets */,
+				AF1B14BC21750C6000736A5E /* AppDelegate.swift */,
+				AFB768142178C592000598AA /* GameManager.swift */,
+			);
+			path = Utiities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +182,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF7C66121762034003EE64F /* AddGameViewController.swift in Sources */,
+				AFB768152178C592000598AA /* GameManager.swift in Sources */,
 				AF1B14BF21750C6000736A5E /* ViewController.swift in Sources */,
+				AFB7680E2178BFFC000598AA /* Utilities.swift in Sources */,
 				AF1B14DF21751C0900736A5E /* VideoGame.swift in Sources */,
 				AFB767EC217671CD000598AA /* DescriptionViewController.swift in Sources */,
 				AF1B14BD21750C6000736A5E /* AppDelegate.swift in Sources */,
