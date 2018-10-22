@@ -37,7 +37,12 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func showErrorAlert() {
         let errorAlert = UIAlertController(title: "Error", message: "Please fill out all fields before submitting your video game.", preferredStyle: .actionSheet)
-        let dismissAction = UIAlertAction(title: "Close", style: .default, handler: nil)
+        let dismissAction = UIAlertAction(title: "Close", style: .default){
+            _ in
+            self.TitleInput.text = ""
+            self.GenreInput.text = ""
+            self.DescriptionInput.text = ""
+        }
         errorAlert.addAction(dismissAction)
         self.present(errorAlert, animated: true, completion: nil)
     }
@@ -51,7 +56,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ViewController {
-            destination.allGames.append(newGame)
+            GameManager.sharedInstance.addGame(game: newGame)
             destination.TableView.reloadData()
         }
     }

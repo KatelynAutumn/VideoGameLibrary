@@ -18,6 +18,8 @@
 		AFB767EC217671CD000598AA /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB767EB217671CD000598AA /* DescriptionViewController.swift */; };
 		AFB7680E2178BFFC000598AA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7680D2178BFFC000598AA /* Utilities.swift */; };
 		AFB768152178C592000598AA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB768142178C592000598AA /* GameManager.swift */; };
+		AFB7681C21790D00000598AA /* EditGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFB7681B21790D00000598AA /* EditGame.storyboard */; };
+		AFB7681E217913BA000598AA /* EditGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB7681D217913BA000598AA /* EditGameViewController.swift */; };
 		AFF7C66121762034003EE64F /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF7C66021762034003EE64F /* AddGameViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		AFB767EB217671CD000598AA /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		AFB7680D2178BFFC000598AA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AFB768142178C592000598AA /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		AFB7681B21790D00000598AA /* EditGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditGame.storyboard; sourceTree = "<group>"; };
+		AFB7681D217913BA000598AA /* EditGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameViewController.swift; sourceTree = "<group>"; };
 		AFF7C66021762034003EE64F /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,17 +72,12 @@
 		AF1B14BB21750C6000736A5E /* Video-Game-Library */ = {
 			isa = PBXGroup;
 			children = (
+				AFB768172178C686000598AA /* Storyboards */,
+				AFB768182178C6C8000598AA /* ViewControllers */,
 				AFB768132178C545000598AA /* Utiities */,
 				AFB768122178C523000598AA /* GameTableViewCell */,
 				AFB768112178C4F7000598AA /* DataModels */,
-				AF1B14C521750C6100736A5E /* LaunchScreen.storyboard */,
-				AF1B14C021750C6000736A5E /* Main.storyboard */,
-				AF1B14BE21750C6000736A5E /* ViewController.swift */,
-				AFB767E3217659AF000598AA /* GameDetails.storyboard */,
-				AFB767EB217671CD000598AA /* DescriptionViewController.swift */,
 				AF1B14C821750C6100736A5E /* Info.plist */,
-				AFF7C66021762034003EE64F /* AddGameViewController.swift */,
-				AFB7680D2178BFFC000598AA /* Utilities.swift */,
 			);
 			path = "Video-Game-Library";
 			sourceTree = "<group>";
@@ -102,11 +101,34 @@
 		AFB768132178C545000598AA /* Utiities */ = {
 			isa = PBXGroup;
 			children = (
+				AFB7680D2178BFFC000598AA /* Utilities.swift */,
 				AF1B14C321750C6100736A5E /* Assets.xcassets */,
 				AF1B14BC21750C6000736A5E /* AppDelegate.swift */,
 				AFB768142178C592000598AA /* GameManager.swift */,
 			);
 			path = Utiities;
+			sourceTree = "<group>";
+		};
+		AFB768172178C686000598AA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AF1B14C521750C6100736A5E /* LaunchScreen.storyboard */,
+				AF1B14C021750C6000736A5E /* Main.storyboard */,
+				AFB767E3217659AF000598AA /* GameDetails.storyboard */,
+				AFB7681B21790D00000598AA /* EditGame.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AFB768182178C6C8000598AA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF1B14BE21750C6000736A5E /* ViewController.swift */,
+				AFB767EB217671CD000598AA /* DescriptionViewController.swift */,
+				AFF7C66021762034003EE64F /* AddGameViewController.swift */,
+				AFB7681D217913BA000598AA /* EditGameViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF1B14C721750C6100736A5E /* LaunchScreen.storyboard in Resources */,
+				AFB7681C21790D00000598AA /* EditGame.storyboard in Resources */,
 				AFB767E4217659AF000598AA /* GameDetails.storyboard in Resources */,
 				AF1B14C421750C6100736A5E /* Assets.xcassets in Resources */,
 				AF1B14C221750C6000736A5E /* Main.storyboard in Resources */,
@@ -183,6 +206,7 @@
 			files = (
 				AFF7C66121762034003EE64F /* AddGameViewController.swift in Sources */,
 				AFB768152178C592000598AA /* GameManager.swift in Sources */,
+				AFB7681E217913BA000598AA /* EditGameViewController.swift in Sources */,
 				AF1B14BF21750C6000736A5E /* ViewController.swift in Sources */,
 				AFB7680E2178BFFC000598AA /* Utilities.swift in Sources */,
 				AF1B14DF21751C0900736A5E /* VideoGame.swift in Sources */,

@@ -10,19 +10,23 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
-    @IBOutlet var TitleDetails: UIView!
+    var selectedGame: VideoGame!
+
+    @IBOutlet weak var TitleLabel: UILabel!
     
-    @IBOutlet var LabelDetails: UIView!
+    @IBOutlet weak var GenreLabel: UILabel!
     
-    @IBOutlet var RatingDetails: UIView!
+    @IBOutlet weak var RatingLabel: UILabel!
     
-    @IBOutlet var Details: UIView!
-    
-    
+    @IBOutlet weak var DescriptionLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TitleLabel.text = selectedGame.Title
+        GenreLabel.text = selectedGame.Genre
+        RatingLabel.text = selectedGame.Rating
+        DescriptionLabel.text = selectedGame.Description
 
         // Do any additional setup after loading the view.
     }
