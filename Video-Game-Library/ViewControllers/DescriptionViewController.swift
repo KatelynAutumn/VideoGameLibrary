@@ -10,6 +10,7 @@ import UIKit
 
 class DescriptionViewController: UIViewController {
 
+    //creating a class for each game to follow
     var selectedGame: VideoGame!
 
     @IBOutlet weak var TitleLabel: UILabel!
@@ -23,6 +24,7 @@ class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //displaying all the selected games information
         TitleLabel.text = selectedGame.Title
         GenreLabel.text = selectedGame.Genre
         RatingLabel.text = selectedGame.Rating

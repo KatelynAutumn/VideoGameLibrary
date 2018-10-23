@@ -157,7 +157,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-O9-iy5">
-                                <rect key="frame" x="141" y="519" width="93" height="30"/>
+                                <rect key="frame" x="141" y="550" width="93" height="30"/>
                                 <state key="normal" title="Submit Game"/>
                                 <connections>
                                     <action selector="SubmitNewGame:" destination="59o-Z5-c5F" eventType="touchUpInside" id="zMr-H3-KPj"/>
@@ -169,12 +169,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="chM-hk-DEJ">
-                                <rect key="frame" x="56" y="419" width="263" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lG0-39-efv">
                                 <rect key="frame" x="56" y="304" width="263" height="59"/>
                                 <constraints>
@@ -192,26 +186,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="doq-So-i6q">
+                                <rect key="frame" x="67" y="412" width="241" height="107"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lG0-39-efv" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="56" id="1eM-4O-zTG"/>
-                            <constraint firstItem="mTG-O9-iy5" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="141" id="2Lo-05-THt"/>
                             <constraint firstItem="edA-ZC-msw" firstAttribute="centerX" secondItem="BPO-kd-vNa" secondAttribute="centerX" id="4HM-6b-Aky"/>
-                            <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="mTG-O9-iy5" secondAttribute="trailing" constant="141" id="4h5-Bb-evn"/>
-                            <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="chM-hk-DEJ" secondAttribute="trailing" constant="56" id="6Fl-IE-U9T"/>
+                            <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="mTG-O9-iy5" secondAttribute="trailing" constant="141" id="5i0-4x-j0x"/>
+                            <constraint firstItem="doq-So-i6q" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="67" id="5ne-go-FK7"/>
                             <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="tgE-tY-VJz" secondAttribute="trailing" constant="56" id="6bw-SP-VhS"/>
+                            <constraint firstItem="doq-So-i6q" firstAttribute="top" secondItem="Un1-c1-GzM" secondAttribute="bottom" constant="9" id="7ew-ZB-ajQ"/>
                             <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="Un1-c1-GzM" secondAttribute="trailing" constant="141" id="8cY-BL-Bhg"/>
                             <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="B4X-lc-Xcd" secondAttribute="trailing" constant="56" id="9k5-rZ-ySF"/>
                             <constraint firstItem="B4X-lc-Xcd" firstAttribute="top" secondItem="2AI-JN-mqX" secondAttribute="bottom" constant="19" id="Afi-PD-Ioq"/>
+                            <constraint firstItem="mTG-O9-iy5" firstAttribute="top" secondItem="doq-So-i6q" secondAttribute="bottom" constant="31" id="BSy-4l-gav"/>
                             <constraint firstItem="Un1-c1-GzM" firstAttribute="top" secondItem="lG0-39-efv" secondAttribute="bottom" constant="19" id="FDd-5a-Eau"/>
-                            <constraint firstItem="mTG-O9-iy5" firstAttribute="top" secondItem="chM-hk-DEJ" secondAttribute="bottom" constant="70" id="IaK-lb-jdB"/>
+                            <constraint firstItem="mTG-O9-iy5" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="141" id="GNl-bs-oXf"/>
+                            <constraint firstItem="doq-So-i6q" firstAttribute="centerX" secondItem="BPO-kd-vNa" secondAttribute="centerX" id="HOX-oB-PTh"/>
                             <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="edA-ZC-msw" secondAttribute="trailing" constant="151" id="Med-Sb-PFk"/>
                             <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="lG0-39-efv" secondAttribute="trailing" constant="56" id="Oji-o7-b0c"/>
-                            <constraint firstItem="chM-hk-DEJ" firstAttribute="top" secondItem="Un1-c1-GzM" secondAttribute="bottom" constant="16" id="QxK-ZC-E3T"/>
                             <constraint firstItem="B4X-lc-Xcd" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="56" id="RXn-bQ-TTJ"/>
                             <constraint firstItem="OhA-F3-iqV" firstAttribute="top" secondItem="BPO-kd-vNa" secondAttribute="top" constant="28" id="VLQ-JY-ads"/>
-                            <constraint firstItem="chM-hk-DEJ" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="56" id="XbE-ur-e4I"/>
+                            <constraint firstItem="BPO-kd-vNa" firstAttribute="trailing" secondItem="doq-So-i6q" secondAttribute="trailing" constant="67" id="X0j-bu-oHX"/>
                             <constraint firstItem="Un1-c1-GzM" firstAttribute="leading" secondItem="BPO-kd-vNa" secondAttribute="leading" constant="141" id="Xgw-Sj-ZIu"/>
                             <constraint firstItem="2AI-JN-mqX" firstAttribute="centerX" secondItem="BPO-kd-vNa" secondAttribute="centerX" id="bH6-rX-nXa"/>
                             <constraint firstItem="mTG-O9-iy5" firstAttribute="centerX" secondItem="BPO-kd-vNa" secondAttribute="centerX" id="cO3-9p-f1c"/>
@@ -220,13 +221,14 @@
                             <constraint firstItem="OhA-F3-iqV" firstAttribute="centerX" secondItem="BPO-kd-vNa" secondAttribute="centerX" id="gJS-FZ-vs0"/>
                             <constraint firstItem="Un1-c1-GzM" firstAttribute="centerX" secondItem="BPO-kd-vNa" secondAttribute="centerX" id="oxr-8n-VUz"/>
                             <constraint firstItem="tgE-tY-VJz" firstAttribute="top" secondItem="OhA-F3-iqV" secondAttribute="bottom" constant="7.5" id="qL3-Ow-ZTE"/>
+                            <constraint firstItem="BPO-kd-vNa" firstAttribute="bottom" secondItem="mTG-O9-iy5" secondAttribute="bottom" constant="43" id="s4X-Tz-06u"/>
                             <constraint firstItem="2AI-JN-mqX" firstAttribute="top" secondItem="tgE-tY-VJz" secondAttribute="bottom" constant="20" id="uWK-eZ-hVI"/>
                             <constraint firstItem="edA-ZC-msw" firstAttribute="top" secondItem="B4X-lc-Xcd" secondAttribute="bottom" constant="35" id="yRa-ze-ojq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BPO-kd-vNa"/>
                     </view>
                     <connections>
-                        <outlet property="DescriptionInput" destination="chM-hk-DEJ" id="ir8-qv-MmG"/>
+                        <outlet property="DescriptionInput" destination="doq-So-i6q" id="G0v-KA-j06"/>
                         <outlet property="GenreInput" destination="B4X-lc-Xcd" id="bnq-ui-VQt"/>
                         <outlet property="RatingPicker" destination="lG0-39-efv" id="gXu-QW-1U5"/>
                         <outlet property="SubmitButton" destination="mTG-O9-iy5" id="DpW-1N-aCm"/>
@@ -237,7 +239,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CmY-eU-Wdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="08W-ib-uT8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="125"/>
+            <point key="canvasLocation" x="1568.8" y="124.58770614692655"/>
         </scene>
         <!--GameDetails-->
         <scene sceneID="jiO-Jp-ANl">

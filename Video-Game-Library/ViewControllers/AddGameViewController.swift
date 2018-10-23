@@ -17,14 +17,14 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     @IBOutlet weak var GenreInput: UITextField!
     
-    @IBOutlet weak var DescriptionInput: UITextField!
-    
     @IBOutlet weak var SubmitButton: UIButton!
     
+    @IBOutlet weak var DescriptionInput: UITextView!
     
+    //creating a rating array to use in the picker
     let rating = ["E", "E 10+", "T", "M", "A"]
     
-    var newGame: VideoGame!
+    var newGame = VideoGame()
     
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Do any additional setup after loading the view.
     }
 
-    
+    //this alert will notify the user if they try to submit a game and any fields aren't filled out
     func showErrorAlert() {
         let errorAlert = UIAlertController(title: "Error", message: "Please fill out all fields before submitting your video game.", preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Close", style: .default){
@@ -61,6 +61,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
+    //picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -73,7 +74,7 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return rating[row]
     }
 
-    
+    //this button will set all the users input to the correct var
     @IBAction func SubmitNewGame(_ sender: Any) {
         let selectedRating = rating[RatingPicker.selectedRow(inComponent: 0)]
         guard let title = TitleInput.text, !title.isEmpty,
@@ -82,8 +83,14 @@ class AddGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 showErrorAlert()
                 return
         }
+        //taking the users input and creating a new VideoGame
+        newGame.Title = title
+        newGame.Description = description
+        newGame.Genre = genre
+        newGame.Rating = selectedRating
+        GameManager.sharedInstance.addGame(game: newGame)
         
-        newGame = VideoGame(Title: title, Genre: genre, Rating: selectedRating, Description: description)
+        //this segue takes us back to the Video Game Library
         self.performSegue(withIdentifier: "unwindToVideoGameLibrary", sender: self)
         
         

@@ -6,31 +6,19 @@
 //  Copyright © 2018 Katelyn Pace. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import RealmSwift
 
-class VideoGame {
-    let Title: String
-    let Genre: String
-    let Rating: String
-    let Description: String
-    var Availability: Bool = true
-    var DueDate: Date?
-    
-    init(Title: String, Genre: String, Rating: String, Description: String) {
-        self.Title = Title
-        self.Genre = Genre
-        self.Rating = Rating
-        self.Description = Description
+class VideoGame: Object {
+    @objc dynamic var Title: String = ""
+    @objc dynamic var Genre: String = ""
+    @objc dynamic var Rating: String = ""
+    @objc dynamic var Description: String = ""
+    @objc dynamic var Availability: Bool = true
+    @objc dynamic var DueDate: Date? = nil
         
         
     }
-    
-    
-    
-    
-    
-    
-}
 
 
 

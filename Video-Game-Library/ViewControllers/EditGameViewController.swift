@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var gameToEdit: VideoGame!
+    var gameToEdit = VideoGame()
 
     @IBOutlet weak var EditTitle: UITextField!
     
@@ -18,11 +19,11 @@ class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var editRating: UIPickerView!
     
-    @IBOutlet weak var editDescription: UITextField!
+    @IBOutlet weak var editDescription: UITextView!
     
     @IBOutlet weak var RatingPicker: UIPickerView!
     
-    
+    //creating the array that will be displayed in out picker
     let rating = ["E", "E 10+", "T", "M", "A"]
     
     override func viewDidLoad() {
@@ -33,7 +34,7 @@ class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Do any additional setup after loading the view.
     }
     
-
+    //creating a picker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -46,7 +47,7 @@ class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return rating[row]
     }
     
-    
+    //alerts the user if there are any fields left blank
     func showErrorAlert() {
         let errorAlert = UIAlertController(title: "Error", message: "Please fill out all fields before submitting your video game.", preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Close", style: .default){
@@ -56,8 +57,14 @@ class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.present(errorAlert, animated: true, completion: nil)
     }
     
+    //preparing this screen to segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ViewController {
+            destination.TableView.reloadData()
+        }
+    }
     
-    
+    //this sets all the new user input to the selected var
     @IBAction func SubmitGame(_ sender: Any) {
         let selectedRating = rating[RatingPicker.selectedRow(inComponent: 0)]
         guard let title = EditTitle.text, !title.isEmpty,
@@ -66,9 +73,18 @@ class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 showErrorAlert()
                 return
         }
+        //realm database NONSENSE
+        let realm = try! Realm()
         
-        gameToEdit = VideoGame(Title: title, Genre: genre, Rating: selectedRating, Description: description)
-        self.performSegue(withIdentifier: "unwindToVideoGameLibrary", sender: self)
+        try! realm.write {
+        //rewriting this Videa Game's details
+            gameToEdit.Title = title
+            gameToEdit.Rating = selectedRating
+            gameToEdit.Genre = genre
+            gameToEdit.Description = description
+        }
+        //segue back to back to Video Game Library
+        performSegue(withIdentifier: "editUnwindSegue", sender: self)
     }
     
     /*
@@ -82,3 +98,4 @@ class EditGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     */
 
 }
+
